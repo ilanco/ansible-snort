@@ -1,0 +1,17 @@
+---
+- name: Add PPA for Snort.
+  apt_repository:
+    repo: "{{ snort_ppa }}"
+    state: present
+    update_cache: yes
+  register: snort_ppa_added
+  when: snort_ppa_use
+
+- name: Ensure Snort will reinstall if the PPA was just added.
+  apt:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - snort
+    - barnyard2
+  when: snort_ppa_added.changed

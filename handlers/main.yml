@@ -1,0 +1,7 @@
+---
+# handlers file for ilanco.snort
+
+- name: restart snort
+  service:
+    name: "snort"
+    state: restarted

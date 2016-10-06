@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: ilanco
+  description: Snort / Barnyard2 installation
+  company: "Orthodox Union"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.0
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+  galaxy_tags:
+    - ids
+    - security

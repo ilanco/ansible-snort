@@ -1,0 +1,31 @@
+---
+- name: Update apt cache.
+  apt:
+    cache_valid_time: 3600
+    update_cache: yes
+
+- name: Ensure Snort is installed.
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - snort
+    - barnyard2-mysql
+
+- name: config_snort | configure snort
+  template:
+    src: "etc/snort/snort.conf.j2"
+    dest: "/etc/snort/snort.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart snort
+
+- name: config_snort | configure snort
+  template:
+    src: "etc/snort/snort.debian.conf.j2"
+    dest: "/etc/snort/snort.debian.conf"
+    owner: root
+    group: root
+    mode: 0600
+  notify: restart snort

@@ -1,0 +1,9 @@
+---
+root_group: root
+snort_conf_path: /etc/snort/conf.d
+snort_conf_file_path: /etc/snort/snort.conf
+snort_mime_file_path: /etc/snort/mime.types
+snort_pidfile: /run/snort.pid
+snort_vhost_path: /etc/snort/sites-enabled
+snort_default_vhost_path: /etc/snort/sites-enabled/default
+__snort_user: "www-data"

@@ -1,0 +1,42 @@
+---
+# defaults file for ilanco.snort
+
+# PPA
+snort_ppa: "ppa:hurricanedefense/stable"
+snort_ppa_use: true
+
+# Barnyard2
+snort_barnyard2_db_info:
+  host: localhost  #db host
+  name: snort  #db name
+  pass: snort  #db password
+  user: snort  #db user
+snort_barnyard2_db_type: mysql
+snort_barnyard2_enable: false
+snort_barnyard2_logdir: '/var/log/snort'
+snort_barnyard2_waldo_file: '{{ snort_barnyard2_logdir }}/barnyard2.waldo'
+
+# Snort
+snort_community_rules_package: 'community-rules.tar.gz'
+snort_community_rules_url: 'https://snort.org/downloads/community'
+snort_config_snort: true
+snort_blacklist_path: '/etc/snort/rules'
+snort_daq_version: 2.0.6
+snort_dynamic_library_rules: []
+snort_external_net: 'any'
+snort_home_net: 'any'
+snort_interface: '{{ ansible_default_ipv4.interface }}'
+snort_options: '--daq-dir /usr/lib/daq'
+snort_output_syslog: false
+snort_preproc_rule_path: '/etc/snort/preproc_rules'
+snort_preproc_rules: []
+snort_rule_path: '/etc/snort/rules'
+snort_rules:
+  - community-rules/community.rules
+  - local.rules
+snort_so_rule_path: '/etc/snort/so_rules'
+snort_send_stats: true
+snort_startup: boot
+snort_stats_threshold: 1
+snort_version: 2.9.8.2
+snort_whitelist_path: '/etc/snort/rules'
