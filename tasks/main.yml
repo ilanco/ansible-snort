@@ -15,18 +15,21 @@
   get_url:
     url: "{{ snort_community_rules_url }}/{{ snort_community_rules_package }}"
     dest: "/tmp/{{ snort_community_rules_package }}"
+  when: snort_enable
 
 - name: extracting snort commmunity rules
   unarchive:
     src: "/tmp/{{ snort_community_rules_package }}"
     dest: "{{ snort_rule_path }}"
     copy: no
+  when: snort_enable
 
 - name: Ensure snort is started and enabled to start at boot.
   service:
     name: snort
     state: started
     enabled: yes
+  when: snort_enable
 
 - include: barnyard2.yml
   when: snort_barnyard2_enable

@@ -23,6 +23,7 @@ snort_config_snort: true
 snort_blacklist_path: '/etc/snort/rules'
 snort_daq_version: 2.0.6
 snort_dynamic_library_rules: []
+snort_enable: true
 snort_external_net: 'any'
 snort_home_net: 'any'
 snort_interface: '{{ ansible_default_ipv4.interface }}'

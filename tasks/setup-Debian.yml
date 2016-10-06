@@ -11,6 +11,7 @@
   with_items:
     - snort
     - barnyard2-mysql
+  when: snort_enable
 
 - name: config_snort | configure snort
   template:
@@ -20,6 +21,7 @@
     group: root
     mode: 0644
   notify: restart snort
+  when: snort_enable
 
 - name: config_snort | configure snort
   template:
@@ -29,3 +31,4 @@
     group: root
     mode: 0600
   notify: restart snort
+  when: snort_enable
