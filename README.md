@@ -1,5 +1,5 @@
-Role Name
-=========
+snort
+=====
 
 An ansible role for Snort and Barnyard2.
 
