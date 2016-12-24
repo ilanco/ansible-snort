@@ -1,5 +1,6 @@
 ---
-dependencies: []
+dependencies:
+  - { role: dstil.apt-pin }
 
 galaxy_info:
   author: ilanco
