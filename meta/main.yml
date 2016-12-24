@@ -1,7 +1,7 @@
 ---
 dependencies:
   - src: dstil.apt-pin
-    name: apt-pin
+    name: dstil.apt-pin
 
 galaxy_info:
   author: ilanco
